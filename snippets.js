@@ -37,6 +37,7 @@ mongoose.connection.once('open', () => {
       }
       console.log('Read snippet', snippet.name);
       console.log(snippet.content);
+      mongoose.disconnect();
     });
   };
 
@@ -80,6 +81,4 @@ mongoose.connection.once('open', () => {
     default:
       console.error('Invalid command.');
   }
-
-  mongoose.connection.close();
 });
